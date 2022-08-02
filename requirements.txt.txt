@@ -1,0 +1,9 @@
+joblib==1.1.0
+modlamp==4.3.0
+numpy==1.23.1
+pandas==1.4.3
+propy==NA
+session_info==1.0.0
+sklearn==1.1.1
+
+
