@@ -10,4 +10,3 @@ jupyter_core==4.10.0
 notebook==6.4.12
 gunicorn
 flask== 2.1.3
-propy== 3.0.0
