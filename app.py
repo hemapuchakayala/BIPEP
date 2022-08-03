@@ -10,8 +10,8 @@ app = Flask(__name__)
 model_PseAAC5 = joblib.load("Model_SVM_PseAAC5")
 model_PseAAC10= joblib.load("Model_SVM_PseAAC10")
 def check_seq(sequence):
-    AALetter=   ["A","R","N","D","C","E","Q","G","H","I","L","K","M","F","P","S","T","W","Y","V"]
-    sequence= sequence.upper()
+    AALetter=   ["A","R","N","D","C","E","Q","G","H","I","L","K","M","F","P","S","T","W","Y","V",
+                 "a","r","n","d","c","e","q","g","h","i","l","k","m","f","p","s","t","w","y","v"]
     counter= 0
     for k in sequence:
         counter = counter+1
@@ -62,7 +62,7 @@ def predict():
     
     sequence = request.form.get("sequence")
     if check_seq(sequence)=="invalid":
-        return render_template('index.html', return_text="Heads Up!! Enter valid sequence. Please return and reload the page")
+        return render_template('index.html', return_text = "Heads Up!! Enter valid sequence. Please return and reload the page")
     elif model_predict(sequence)==0:
         final= 'Not a Biofilm inhibiting peptide'
     elif model_predict(sequence)==1:
