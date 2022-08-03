@@ -3,7 +3,7 @@ modlamp==4.3.0
 numpy==1.23.1
 pandas==1.4.3
 session_info==1.0.0
-sklearn==1.1.1
+sklearn
 IPython==8.4.0
 jupyter_client==7.2.2
 jupyter_core==4.10.0
