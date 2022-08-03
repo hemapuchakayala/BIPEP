@@ -37,7 +37,7 @@ def model_predict(sequence):
             final_features.append(paac['PAAC'+str(k)])
             k+=1
         final_features=np.array(final_features)
-        return model_SVM_PseAAC5.predict(final_features.reshape(1,-1))
+        return model_PseAAC5.predict(final_features.reshape(1,-1))
     elif counter > 10:
         DesObject = PyPro.GetProDes(sequence)      
         paac = DesObject.GetPAAC(lamda=10,weight=0.05)
@@ -46,7 +46,7 @@ def model_predict(sequence):
             final_features.append(paac['PAAC'+str(k)])
             k+=1
         final_features=np.array(final_features)
-        return Model_SVM_PseAAC10.predict(final_features.reshape(1,-1))
+        return model_PseAAC10.predict(final_features.reshape(1,-1))
     
     
 
@@ -62,13 +62,13 @@ def predict():
     
     sequence = request.form.get("sequence")
     if check_seq(sequence)=="invalid":
-        return render_template('index.html', error_text = "Heads Up!! Enter valid sequence. Please return and reload the page")
+        return render_template('index.html', return_text = "Heads Up!! Enter valid sequence. Please return and reload the page")
     elif model_predict(sequence)==0:
         final= 'Not a Biofilm inhibiting peptide'
     elif model_predict(sequence)==1:
         final='It is a Biofilm inhibiting peptide'
         
-    return render_template('index.html', predicted_text=final)                          
+    return render_template('index.html', return_text=final)                          
 
 
 if __name__ == "__main__":
