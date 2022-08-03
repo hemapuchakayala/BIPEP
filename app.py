@@ -62,7 +62,7 @@ def predict():
     
     sequence = request.form.get("sequence")
     if check_seq(sequence)=="invalid":
-        return render_template('index.html', return_text= "Heads Up!! Enter valid sequence. Please return and reload the page")
+        return render_template('index.html', return_text="Heads Up!! Enter valid sequence. Please return and reload the page")
     elif model_predict(sequence)==0:
         final= 'Not a Biofilm inhibiting peptide'
     elif model_predict(sequence)==1:
