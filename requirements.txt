@@ -9,3 +9,4 @@ jupyter_client==7.2.2
 jupyter_core==4.10.0
 notebook==6.4.12
 gunicorn
+flask== 2.1.3
