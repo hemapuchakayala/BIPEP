@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BIPEP</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='index.css' rel= "stylesheet" >
+  </head>
+  <body>
+   <div class="login">
+  	<h1>Predict Biofilm Inhibition Property</h1>
+
+      <div class="input_Sequence">
+      <form action="{{ url_for('predict')}}"method="POST">
+        <div class="inps">
+      	<input type="text" name="sequence" placeholder="sequence" required="required" />
+
+          <button type="submit" class="btn btn-primary btn-block btn-large">predict</button>
+          </div>
+      </form>
+      </div>
+      <br>
+      <br>
+        <div class="return_text">{{ return_text }} </div>
+
+      </div>
+      <div class="Box"> </div>
+  </body>
+</html>
